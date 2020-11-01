@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="resources/css/Style.css"> <!-- Styles should be the LAST -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
 
     <title> DivanTelecom Admin</title>
@@ -15,22 +16,25 @@
 
 <header>
     <nav>
-        <div class="row">
-            <img src="resources/img/logo.png" alt="DivanTelecom logo" class="logo">
-            <ul class="main-nav">
-                <li><a href="/Index.html">hello</a></li>
-                <li><a href="/Gallery.html">Выбиралка</a></li>
-                <li><a href="/About.html">Почемушка</a></li>
-                <li><a href="/Contacts.html">Звонилка</a></li>
+<#--            <img src="../static/resources/img/logo.png" alt="DivanTelecom logo" class="logo">-->
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link " href="/Index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/web/subscriber/listofsubscribers">Admin</a></li>
+                <li class="nav-item"><a class="nav-link " href="/Gallery.html">User</a></li>
+<#--                <li class="nav-item"><a class="nav-link active" href="/About.html">Почемушка</a></li>-->
+<#--                <li class="nav-item"><a class="nav-link active" href="/Contacts.html">Звонилка</a></li>-->
             </ul>
-        </div>
+
     </nav>
 
 </header>
 <div>
     <div>
+        <br>
+    </div>
+    <div>
         <#--<a href="http://localhost:8080/">Create</a>-->
-        <table class="table table-dark">
+        <table class="table">
             <tr>
 <#--                private String id;-->
 <#--                private String name;-->
@@ -46,7 +50,7 @@
                 <th>id</th>
                 <th>name</th>
                 <th>lastName</th>
-<#--                <th>Age</th>-->
+                <th>age</th>
                 <th>operatorCode</th>
                 <th>userNumber</th>
                 <th>balance</th>

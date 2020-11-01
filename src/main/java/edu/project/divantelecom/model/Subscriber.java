@@ -21,13 +21,13 @@ public class Subscriber {
 
 
     public Subscriber(LocalDate of) {
-        age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+
     }
 
     public Subscriber(LocalDate dateOfBirth, LocalDateTime lastLogin_at) {
         this.dateOfBirth = dateOfBirth;
         this.lastLogin_at = lastLogin_at;
-        age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+
     }
 
     public Subscriber(String name, String lastName, String operatorCode, String userNumber, int paymentMethod, String description) {
@@ -37,7 +37,7 @@ public class Subscriber {
         this.userNumber = userNumber;
         this.balance = paymentMethod;
         this.description = description;
-        age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+
     }
 
     public Subscriber(String id, String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
@@ -51,7 +51,23 @@ public class Subscriber {
         this.description = description;
         this.created_at = created_at;
         this.lastLogin_at = lastLogin_at;
-        age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+
+//        this.age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+    }
+
+    public Subscriber(String id, String name, String lastName, int age, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
+        this.dateOfBirth = dateOfBirth;
+        this.operatorCode = operatorCode;
+        this.userNumber = userNumber;
+        this.balance = balance;
+        this.description = description;
+        this.created_at = created_at;
+        this.lastLogin_at = lastLogin_at;
+
     }
 
     public String getId() {
@@ -134,6 +150,14 @@ public class Subscriber {
         this.lastLogin_at = lastLogin_at;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -165,9 +189,6 @@ public class Subscriber {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Subscriber s1 = new Subscriber(LocalDate.of(1986,06,19),LocalDateTime.now());
-        System.out.println(s1.age);
-    }
+
 }
 
