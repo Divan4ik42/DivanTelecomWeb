@@ -10,9 +10,9 @@ public class Subscriber {
     private String name;
     private String lastName;
     private LocalDate dateOfBirth;
-    private int operatorCode;
-    private int userNumber;
-    private String paymentMethod;
+    private String operatorCode;
+    private String userNumber;
+    private int balance;
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime lastLogin_at;
@@ -27,24 +27,24 @@ public class Subscriber {
         age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
     }
 
-    public Subscriber(String name, String lastName, int operatorCode, int userNumber, String paymentMethod, String description) {
+    public Subscriber(String name, String lastName, String operatorCode, String userNumber, int paymentMethod, String description) {
         this.name = name;
         this.lastName = lastName;
         this.operatorCode = operatorCode;
         this.userNumber = userNumber;
-        this.paymentMethod = paymentMethod;
+        this.balance = paymentMethod;
         this.description = description;
         age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
     }
 
-    public Subscriber(String id, String name, String lastName, LocalDate dateOfBirth, int operatorCode, int userNumber, String paymentMethod, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
+    public Subscriber(String id, String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.operatorCode = operatorCode;
         this.userNumber = userNumber;
-        this.paymentMethod = paymentMethod;
+        this.balance = balance;
         this.description = description;
         this.created_at = created_at;
         this.lastLogin_at = lastLogin_at;
@@ -83,28 +83,28 @@ public class Subscriber {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getOperatorCode() {
+    public String getOperatorCode() {
         return operatorCode;
     }
 
-    public void setOperatorCode(int operatorCode) {
+    public void setOperatorCode(String operatorCode) {
         this.operatorCode = operatorCode;
     }
 
-    public int getUserNumber() {
+    public String getUserNumber() {
         return userNumber;
     }
 
-    public void setUserNumber(int userNumber) {
+    public void setUserNumber(String userNumber) {
         this.userNumber = userNumber;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setBalance(int paymentMethod) {
+        this.balance = paymentMethod;
     }
 
     public String getDescription() {
@@ -155,7 +155,7 @@ public class Subscriber {
                 ", dateOfBirth=" + age +
                 ", operatorCode=" + operatorCode +
                 ", userNumber=" + userNumber +
-                ", paymentMethod='" + paymentMethod + '\'' +
+                ", balance='" + balance + '\'' +
                 ", description='" + description + '\'' +
                 ", created_at=" + created_at +
                 ", lastLogin_at=" + lastLogin_at +
