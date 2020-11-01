@@ -32,22 +32,41 @@
         <#--<a href="http://localhost:8080/">Create</a>-->
         <table class="table table-dark">
             <tr>
+<#--                private String id;-->
+<#--                private String name;-->
+<#--                private String lastName;-->
+<#--                private LocalDate dateOfBirth;-->
+<#--                private String operatorCode;-->
+<#--                private String userNumber;-->
+<#--                private int balance;-->
+<#--                private String description;-->
+<#--                private LocalDateTime created_at;-->
+<#--                private LocalDateTime lastLogin_at;-->
+
                 <th>id</th>
                 <th>name</th>
+                <th>lastName</th>
+<#--                <th>Age</th>-->
+                <th>operatorCode</th>
+                <th>userNumber</th>
+                <th>balance</th>
                 <th>description</th>
-                <th>created</th>
-                <th>modified</th>
-                <th>delete</th>
-                <th>edit</th>
+                <th>created_at</th>
+                <th>lastLogin_at</th>
             </tr>
-            <#list Items as element> <!--цикл по всем айтемам -->
+            <#list subscribers as element> <!--цикл по всем айтемам -->
             <#--      для каждого айтем каторый мы получили из контроллера-->
                 <tr>
                     <td>${element.id}</td>
                     <td>${element.name}</td>
+                    <td>${element.lastName}</td>
+                    <td>${element.age}</td>
+                    <td>${element.operatorCode}</td>
+                    <td>${element.userNumber}</td>
+                    <td>${element.balance}</td>
                     <td>${element.description}</td>
                     <td>${element.created_at}</td>
-                    <td>${element.modified_at}</td>
+                    <td>${element.lastLogin_at}</td>
                     <td><a href="/web/item/delete/${element.id}"><button type="button" class="btn btn-light">delete</button></a> </td>
                     <td><a href="/web/item/update/${element.id}"><button type="button" class="btn btn-info">edit</button></a> </td>
 
@@ -59,7 +78,7 @@
     </div>
 </div>
 <div class="main-text-box">
-    <a class="btn btn-full" href="/Gallery.html"> Admin page </a>
+    <a class="btn btn-full" href="/"> Home page </a>
     <a class="btn btn-ghost" href="/Contacts.html"> User page </a>
 </div>
 </body>

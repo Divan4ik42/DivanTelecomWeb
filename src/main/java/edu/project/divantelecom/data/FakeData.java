@@ -13,13 +13,21 @@ import java.util.stream.Stream;
 public class FakeData {
     List<Subscriber> subscriber = Stream.of(
             new Subscriber("1","Alex","Sofiychuk", LocalDate.of(1970,3,23),"050","7168772",200,"some date", LocalDateTime.now(),LocalDateTime.now()),
-            new Subscriber("2","Daria","Golovko", LocalDate.of(1980,6,31),"050","7168773",500,"some date", LocalDateTime.now(),LocalDateTime.now()),
+            new Subscriber("2","Daria","Golovko", LocalDate.of(1980,6,30),"050","7168773",500,"some date", LocalDateTime.now(),LocalDateTime.now()),
             new Subscriber("3","Anastasia","Haritonova", LocalDate.of(1981,9,27),"050","7168774",600,"some date", LocalDateTime.now(),LocalDateTime.now()),
             new Subscriber("4","Mikola","Dog", LocalDate.of(1987,12,22),"050","7168775",50,"some date", LocalDateTime.now(),LocalDateTime.now()),
             new Subscriber("5","Kate","Bee", LocalDate.of(1992,6,1),"050","7168776",20,"some date", LocalDateTime.now(),LocalDateTime.now()),
             new Subscriber("6","Pasha","Guz", LocalDate.of(1997,2,5),"050","7168777",300,"some date", LocalDateTime.now(),LocalDateTime.now())
 
     ).collect(Collectors.toList());
+
+    public List<Subscriber> getSubscriber() {
+        return subscriber;
+    }
+
+    public void setSubscriber(List<Subscriber> subscriber) {
+        this.subscriber = subscriber;
+    }
 }
 
 

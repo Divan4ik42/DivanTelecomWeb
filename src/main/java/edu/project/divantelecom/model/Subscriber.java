@@ -9,6 +9,7 @@ public class Subscriber {
     private String id;
     private String name;
     private String lastName;
+    private int age;
     private LocalDate dateOfBirth;
     private String operatorCode;
     private String userNumber;
@@ -16,6 +17,8 @@ public class Subscriber {
     private String description;
     private LocalDateTime created_at;
     private LocalDateTime lastLogin_at;
+
+
 
     public Subscriber(LocalDate of) {
         age = Period.between(dateOfBirth , LocalDate.from(lastLogin_at)).getYears();
@@ -144,7 +147,7 @@ public class Subscriber {
         return Objects.hash(getId());
     }
 
-    int age;
+
 
     @Override
     public String toString() {
@@ -164,7 +167,7 @@ public class Subscriber {
 
     public static void main(String[] args) {
         Subscriber s1 = new Subscriber(LocalDate.of(1986,06,19),LocalDateTime.now());
-        System.out.println(s1);
+        System.out.println(s1.age);
     }
 }
 
