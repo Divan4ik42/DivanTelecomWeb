@@ -40,6 +40,11 @@ public class Subscriber {
 
     }
 
+    public Subscriber(String name, String lastName) {
+        this.name = name;
+        this.lastName = lastName;
+    }
+
     public Subscriber(String id, String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
         this.id = id;
         this.name = name;
