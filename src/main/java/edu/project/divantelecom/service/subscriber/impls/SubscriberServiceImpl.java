@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class SubscriberServiceImpl implements ICrudSubscriber {
@@ -16,16 +17,11 @@ public class SubscriberServiceImpl implements ICrudSubscriber {
 
     @Override
     public Subscriber create(Subscriber subscriber) {
-        if (subscriber.getId() != null) {
-            this.getAll().add(subscriber);
-        } else {
-            Integer id = this.getAll().stream().map(element -> element.getId())
-                    .mapToInt(element -> Integer.valueOf(element)).max().orElse(0);
-            subscriber.setId(String.valueOf(++id));
-            subscriber.setCreated_at(LocalDateTime.now());
-            subscriber.setLastLogin_at(LocalDateTime.now());
-        }
-
+        UUID id = UUID.randomUUID();
+        subscriber.setId(id.toString());
+        subscriber.setCreated_at(LocalDateTime.now());
+        subscriber.setLastLogin_at(LocalDateTime.now());
+        fakeData.getSubscriber().add(subscriber);
         return subscriber;
     }
 
@@ -49,7 +45,8 @@ public class SubscriberServiceImpl implements ICrudSubscriber {
 
     @Override
     public Subscriber delete(String id) {
-        Subscriber subscriber = this.get(id);
+        Subscriber subscriber = this.getAll().stream().filter(element->element.getId().equals(id))
+                .findFirst().orElse(null);
         this.getAll().remove(subscriber);
         return subscriber;
     }

@@ -1,26 +1,24 @@
-package edu.project.divantelecom.model;
+package edu.project.divantelecom.forms;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
-import java.util.Objects;
 
-public class Subscriber {
-    private String id;
-    private String name;
-    private String lastName;
-    private LocalDate dateOfBirth;
-    private String operatorCode;
-    private String userNumber;
-    private int balance;
-    private String description;
-    private LocalDateTime created_at;
-    private LocalDateTime lastLogin_at;
+public class SubscriberForm {
+    private String id = "";
+    private String name= "";
+    private String lastName= "";
+    private String dateOfBirth= "";
+    private String operatorCode= "";
+    private String userNumber= "";
+    private int balance = 0;
+    private String description= "";
+    private String created_at= "";
+    private String lastLogin_at= "";
 
-    public Subscriber() {
+    public SubscriberForm() {
     }
 
-    public Subscriber(String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description) {
+    public SubscriberForm(String name, String lastName, String dateOfBirth, String operatorCode, String userNumber, int balance, String description) {
         this.name = name;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -30,7 +28,8 @@ public class Subscriber {
         this.description = description;
     }
 
-    public Subscriber(String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
+    public SubscriberForm(String id, String name, String lastName, String dateOfBirth, String operatorCode, String userNumber, int balance, String description) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -38,11 +37,9 @@ public class Subscriber {
         this.userNumber = userNumber;
         this.balance = balance;
         this.description = description;
-        this.created_at = created_at;
-        this.lastLogin_at = lastLogin_at;
     }
 
-    public Subscriber(String id, String name, String lastName, LocalDate dateOfBirth, String operatorCode, String userNumber, int balance, String description, LocalDateTime created_at, LocalDateTime lastLogin_at) {
+    public SubscriberForm(String id, String name, String lastName, String dateOfBirth, String operatorCode, String userNumber, int balance, String description, String created_at, String lastLogin_at) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -79,11 +76,11 @@ public class Subscriber {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -119,49 +116,35 @@ public class Subscriber {
         this.description = description;
     }
 
-    public LocalDateTime getCreated_at() {
+    public String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getLastLogin_at() {
+    public String getLastLogin_at() {
         return lastLogin_at;
     }
 
-    public void setLastLogin_at(LocalDateTime lastLogin_at) {
+    public void setLastLogin_at(String lastLogin_at) {
         this.lastLogin_at = lastLogin_at;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Subscriber that = (Subscriber) o;
-        return getId().equals(that.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
-    @Override
     public String toString() {
-        return "Subscriber{" +
+        return "SubscriberForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", operatorCode='" + operatorCode + '\'' +
                 ", userNumber='" + userNumber + '\'' +
-                ", balance=" + balance +
+                ", balance='" + balance + '\'' +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", lastLogin_at=" + lastLogin_at +
+                ", created_at='" + created_at + '\'' +
+                ", lastLogin_at='" + lastLogin_at + '\'' +
                 '}';
     }
 }
-
