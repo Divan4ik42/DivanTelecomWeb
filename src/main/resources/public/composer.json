@@ -1,0 +1,23 @@
+{
+  "name": "divan/oop",
+  "authors": [
+    {
+      "name": "Divan4ik",
+      "email": "Divan4ik42@gmail.com"
+    }
+  ],
+  "require": {
+    "klein/klein": "^2.1",
+    "php-di/php-di": "^6.2",
+    "ext-mysqli": "*",
+    "ext-pdo": "*"
+  },
+
+  "autoload": {
+
+    "psr-4": {
+
+      "src\\": "../src/"
+    }
+  }
+}
